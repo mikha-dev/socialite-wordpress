@@ -63,7 +63,7 @@ class WordPressProvider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id'       => (int)$user['ID'],
+            'id'       => (int)$user['id'],
             'nickname' => Arr::get($user, 'display_name'),
             'name'     => Arr::get($user, 'username', Arr::get($user, 'user_login')),
             'email'    => Arr::get($user, 'email', Arr::get($user, 'user_email')),
